@@ -14,15 +14,28 @@ public class AgentMemory {
     private final LinkedList<MemoryEntry> history = new LinkedList<>();
 
     public void save(String role, String content) {
+        save(role, content, null);
+    }
+
+    private void save(String role, String content, String name) {
         if (history.size() >= MAX_ENTRIES) {
             history.removeFirst();
         }
-        history.add(new MemoryEntry(role, content, Instant.now()));
+        history.add(new MemoryEntry(role, content, name, Instant.now()));
+    }
+
+    public void saveFunctionResult(String functionName, String result) {
+        save("function", result, functionName);
     }
 
     public List<ChatMessage> toChatMessages() {
         return history.stream()
-                .map(e -> new ChatMessage(e.role(), e.content()))
+                .map(e -> {
+                    if ("function".equals(e.role())) {
+                        return new ChatMessage("function", e.content(), e.name());
+                    }
+                    return new ChatMessage(e.role(), e.content());
+                })
                 .toList();
     }
 }

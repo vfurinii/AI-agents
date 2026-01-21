@@ -1,11 +1,13 @@
 package com.example.aiagent.mappers;
 
+import com.example.aiagent.parameters.GetWeatherParameters;
 import com.example.aiagent.tool.AgentTool;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theokanning.openai.completion.chat.ChatFunction;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -20,15 +22,13 @@ public class ToolMapper {
                 "properties", Map.of(
                         "city", Map.of("type", "string")
                 ),
-                "required", new String[]{"city"}
+                "required", List.of("city")
         );
-
-        JsonNode parametersNode = mapper.valueToTree(schema);
 
         ChatFunction function = new ChatFunction();
         function.setName(tool.name());
         function.setDescription(tool.description());
-        function.setParametersClass(parametersNode.getClass());
+        function.setParametersClass(GetWeatherParameters.class);
 
         return function;
     }

@@ -32,7 +32,6 @@ public class LlmClient {
                 .functions(functions)
                 .functionCall(ChatCompletionRequest.ChatCompletionRequestFunctionCall.of("auto"))
                 .build();
-
         return service.createChatCompletion(request);
     }
 }

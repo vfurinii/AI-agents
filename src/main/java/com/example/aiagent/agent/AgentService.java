@@ -42,6 +42,7 @@ public class AgentService {
         memory.save("user", userInput);
 
         List<ChatMessage> messages = memory.toChatMessages();
+
         List<ChatFunction> functions = tools.values()
                 .stream()
                 .map(toolMapper::toFunction)
@@ -51,25 +52,26 @@ public class AgentService {
         ChatCompletionChoice choice = result.getChoices().get(0);
         ChatMessage message = choice.getMessage();
 
-        // 👉 LLM pediu para chamar uma função
         if (message.getFunctionCall() != null) {
 
             String functionName = message.getFunctionCall().getName();
-            String argumentsJson = String.valueOf(message.getFunctionCall().getArguments());
+            String argumentsJson = message.getFunctionCall().getArguments().toString();
 
             AgentTool tool = tools.get(functionName);
 
-            Map args = new ObjectMapper()
+            Map<String, Object> args = new ObjectMapper()
                     .readValue(argumentsJson, Map.class);
 
             String observation = tool.execute(args);
-            memory.save("tool", observation);
+
+            // 🚨 AQUI É A CORREÇÃO
+            memory.saveFunctionResult(functionName, observation);
 
             // loop observe → reason
             return handle(observation);
         }
 
-        memory.save("agent", message.getContent());
+        memory.save("assistant", message.getContent());
         return message.getContent();
     }
 }
