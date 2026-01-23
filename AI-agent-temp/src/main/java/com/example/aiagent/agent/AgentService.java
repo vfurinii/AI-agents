@@ -64,7 +64,6 @@ public class AgentService {
 
             String observation = tool.execute(args);
 
-            // 🚨 AQUI É A CORREÇÃO
             memory.saveFunctionResult(functionName, observation);
 
             // loop observe → reason

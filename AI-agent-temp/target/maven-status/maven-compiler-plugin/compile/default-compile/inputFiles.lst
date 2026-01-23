@@ -1,0 +1,13 @@
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\llm\LlmClient.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\memory\AgentMemory.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\mappers\ToolMapper.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\dto\OpenAiChatRequest.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\agent\AgentService.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\controller\AgentController.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\tool\WeatherTool.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\tool\AgentTool.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\parameters\GetWeatherParameters.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\agent\OpenAiService.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\agent\AgentDecision.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\memory\MemoryEntry.java
+C:\Users\vitor\IdeaProjects\AI-agents\AI-agent-temp\src\main\java\com\example\aiagent\AiAgentApplication.java

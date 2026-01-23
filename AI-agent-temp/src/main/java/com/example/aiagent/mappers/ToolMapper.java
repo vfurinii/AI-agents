@@ -13,17 +13,7 @@ import java.util.Map;
 @Component
 public class ToolMapper {
 
-    private final ObjectMapper mapper = new ObjectMapper();
-
     public ChatFunction toFunction(AgentTool tool) {
-
-        Map<String, Object> schema = Map.of(
-                "type", "object",
-                "properties", Map.of(
-                        "city", Map.of("type", "string")
-                ),
-                "required", List.of("city")
-        );
 
         ChatFunction function = new ChatFunction();
         function.setName(tool.name());
