@@ -16,21 +16,14 @@ public class AgentService {
 
     public String chat(String userMessage) {
 
-        memory.add("User: " + userMessage);
+        // Add user message to memory
+        memory.addUserMessage(userMessage);
 
-        String prompt = """
-        You are a customizable chatbot.
+        // Send all conversation history to LLM
+        String response = llm.ask(memory.getMessages());
 
-        Conversation so far:
-        %s
-
-        Answer naturally:
-        User: %s
-        """.formatted(memory.context(), userMessage);
-
-        String response = llm.ask(prompt);
-
-        memory.add("Assistant: " + response);
+        // Add assistant response to memory
+        memory.addAssistantMessage(response);
 
         return response;
     }
