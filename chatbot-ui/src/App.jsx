@@ -3,6 +3,7 @@ import './App.css'
 import ChatMessage from './components/ChatMessage'
 import ChatInput from './components/ChatInput'
 import axios from 'axios'
+import logoCamarim from './logo-camarim.jpg'
 
 function App() {
   const [messages, setMessages] = useState([])
@@ -71,10 +72,13 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>🤖 AI Chatbot</h1>
+        <div className="header-brand">
+          <img src={logoCamarim} alt="Camarim Logo" className="header-logo" />
+          <h1>Camarim AI Assistant</h1>
+        </div>
         {messages.length > 0 && (
           <button className="clear-btn" onClick={clearChat}>
-            Clear Chat
+            Limpar Chat
           </button>
         )}
       </header>
@@ -82,17 +86,17 @@ function App() {
       <div className="chat-container" ref={chatContainerRef}>
         {messages.length === 0 ? (
           <div className="empty-state">
-            <h2>Welcome to AI Chatbot</h2>
-            <p>Start a conversation by typing a message below. Ask questions, get weather information, or just chat!</p>
+            <h2>Bem-vindo ao Camarim AI Assistant</h2>
+            <p>Inicie uma conversa digitando sua mensagem abaixo. Estou aqui para ajudar com suas dúvidas!</p>
             <div className="suggestions">
-              <button onClick={() => sendMessage("What's the weather in São Paulo?")}>
-                🌤️ What's the weather?
+              <button onClick={() => sendMessage("Como você pode me ajudar?")}>
+                ❓ Como pode ajudar?
               </button>
-              <button onClick={() => sendMessage("Tell me a joke")}>
-                😄 Tell me a joke
+              <button onClick={() => sendMessage("Quais serviços vocês oferecem?")}>
+                💼 Serviços disponíveis
               </button>
-              <button onClick={() => sendMessage("How can you help me?")}>
-                ❓ How can you help?
+              <button onClick={() => sendMessage("Preciso de orientação")}>
+                🤝 Preciso de ajuda
               </button>
             </div>
           </div>

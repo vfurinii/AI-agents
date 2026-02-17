@@ -34,7 +34,7 @@ const ChatInput = ({ onSend, disabled }) => {
           <textarea
             ref={textareaRef}
             className="chat-textarea"
-            placeholder="Type your message here... (Press Enter to send, Shift+Enter for new line)"
+            placeholder="Digite sua mensagem aqui... (Enter para enviar, Shift+Enter para nova linha)"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}

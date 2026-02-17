@@ -8,21 +8,26 @@
 }
 
 .message-bubble.user {
-  background-color: #5436DA;
+  background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
   margin-left: auto;
   margin-right: 0;
   max-width: 80%;
+  border: 1px solid #f48fb1;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
 }
 
 .message-bubble.assistant {
-  background-color: #444654;
+  background: linear-gradient(135deg, #2a2a3e 0%, #1f1f2e 100%);
   margin-right: auto;
   margin-left: 0;
   max-width: 80%;
+  border: 1px solid #3a3a4e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .message-bubble.error {
-  background-color: #D32F2F;
+  background: linear-gradient(135deg, #c9184a 0%, #a4133c 100%);
+  border: 1px solid #ff4d6d;
 }
 
 .message-icon {
@@ -41,7 +46,7 @@
 }
 
 .message-text {
-  color: #ECECF1;
+  color: #f8bbd0;
   line-height: 1.6;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -49,10 +54,19 @@
   margin-bottom: 4px;
 }
 
+.message-bubble.user .message-text {
+  color: white;
+  font-weight: 500;
+}
+
 .message-time {
-  color: rgba(236, 236, 241, 0.5);
+  color: rgba(248, 187, 208, 0.6);
   font-size: 11px;
   text-align: right;
+}
+
+.message-bubble.user .message-time {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes slideIn {
