@@ -1,8 +1,16 @@
 server:
   port: 8080
+
 openai:
   api-key: ${OPENAI_API_KEY}
   model: gpt-4o-mini
+
+whatsapp:
+  # Get these from Meta for Developers: https://developers.facebook.com/apps
+  phone-number-id: ${WHATSAPP_PHONE_NUMBER_ID:your-phone-number-id}
+  access-token: ${WHATSAPP_ACCESS_TOKEN:your-access-token}
+  verify-token: ${WHATSAPP_VERIFY_TOKEN:your-verify-token}
+
 spring:
   application:
     name: chatbot
