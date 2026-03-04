@@ -1,0 +1,41 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: camarim-agent
+  datasource:
+    url: jdbc:h2:file:./data/camarim
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# OpenAI Configuration
+openai:
+  api-key: ${OPENAI_API_KEY:your-api-key-here}
+  model: ${OPENAI_MODEL:gpt-4o-mini}
+  base-url: https://api.openai.com/v1
+
+# Camarim Configuration
+camarim:
+  store:
+    name: "Salão [Seu Nome]"
+    location: "[Sua Cidade]"
+    instagram: "@[seu_instagram]"
+  assistant:
+    tone: "profissional, acolhedor e confiante"
+    style: "simpático, ágil e atencioso"
+  services:
+    - name: "Mecha de Cabelo"
+      price: 100.00
+      description: "Mechas tradicionais para realçar seu visual"
+
