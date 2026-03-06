@@ -42,3 +42,7 @@ camarim:
       price: 100.00
       description: "Mechas tradicionais para realçar seu visual"
 
+    - name: "Progressiva"
+      price: 250.00
+      description: "Alisamento progressivo (valor mínimo, pode variar conforme tamanho do cabelo)"
+
