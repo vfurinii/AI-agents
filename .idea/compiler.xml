@@ -6,10 +6,13 @@
       <directory url="file://$PROJECT_DIR$/AI-agent-core/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ai-agent-temp" />
+        <module name="chatbot" />
         <module name="AI-agent-temp" />
         <module name="AI-agent-chatbot" />
       </profile>
@@ -17,6 +20,7 @@
     <bytecodeTargetLevel>
       <module name="ai-agent" target="17" />
       <module name="AI-agent-core" target="17" />
+      <module name="camarim-agent" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +30,8 @@
       <module name="AI-agent-temp" options="-parameters" />
       <module name="ai-agent" options="-parameters" />
       <module name="ai-agent-core" options="-parameters" />
+      <module name="ai-agent-temp" options="-parameters" />
+      <module name="chatbot" options="-parameters" />
     </option>
   </component>
 </project>
